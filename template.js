@@ -22,12 +22,6 @@ inquirer.prompt([
     name:"email",
     message:"What is your managers email?",
     type:"input",
-},
-
-{
-    name:"office",
-    message:"What is your managers office number?",
-    type:"input",
 }
 
 ])

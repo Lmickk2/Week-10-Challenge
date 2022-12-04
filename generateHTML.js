@@ -17,7 +17,6 @@ const generateHTML=(response) => {
         <li>${response.name}</li>
         <li>ID: ${response.ID}</li>
         <li>Email: ${response.email}</li>
-        <li> Office: ${response.office}</li>
     </ol>
     </div>
 	<script src="index.js"></script>
