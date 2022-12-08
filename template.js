@@ -40,79 +40,79 @@ const inquirer=require("inquirer");
 })
 
 
-// const addMember = () => {
+const addMember = () => {
 
-//     return inquirer.prompt([
-//         {
-//             name: "add",
-//             message: "Would you like to add a team member?",
-//             choices: ["Add Manager", "Add Intern", "Add Engineer", "I'm done creating my team."],
-//             type: "list"
-//         }
-//     ])
+    return inquirer.prompt([
+        {
+            name: "add",
+            message: "Would you like to add a team member?",
+            choices: ["Add Manager", "Add Intern", "Add Engineer", "I'm done creating my team."],
+            type: "list"
+        }
+    ])
 
-//     .then(choice => {
-//         switch (choice.menu) {
-//             case "Add Intern":
-//                 newIntern();
-//                 break;
-//             case "Add Engineer":
-//                 newEngineer();
-//                 break;
-//             case "I'm done creating my team.":
-//                 createTeam();
+    .then(choice => {
+        switch (choice.menu) {
+            case "Add Intern":
+                newIntern();
+                break;
+            case "Add Engineer":
+                newEngineer();
+                break;
+            case "I'm done creating my team.":
+                createTeam();
 
 
-//         }
-//     });
-// }
+        }
+    });
+}
 
-// const newIntern = () => {
-//     return inquirer.prompt ([
-//         {
-//             name:"name",
-//             message:`"What is the intern's name?"`,
-//             type:"input"
-//         },    
+const newIntern = () => {
+    return inquirer.prompt ([
+        {
+            name:"name",
+            message:`"What is the intern's name?"`,
+            type:"input"
+        },    
         
-//         {
-//             name:"ID",
-//             message:"What is the intern's ID?",
-//             type:"input"
-//         },
+        {
+            name:"ID",
+            message:"What is the intern's ID?",
+            type:"input"
+        },
         
-//         {
-//             name:"email",
-//             message:"What is the intern's email?",
-//             type:"input",
-//         }
+        {
+            name:"email",
+            message:"What is the intern's email?",
+            type:"input",
+        }
         
-//         ]);
-// }
+        ]);
+}
 
-// const newEngineer = () => {
-//     return inquirer.prompt ([
-//         {
-//             name:"name",
-//             message:`"What is the engineer's name?"`,
-//             type:"input"
-//         },    
+const newEngineer = () => {
+    return inquirer.prompt ([
+        {
+            name:"name",
+            message:`"What is the engineer's name?"`,
+            type:"input"
+        },    
         
-//         {
-//             name:"ID",
-//             message:"What is the engineer's ID?",
-//             type:"input"
-//         },
+        {
+            name:"ID",
+            message:"What is the engineer's ID?",
+            type:"input"
+        },
         
-//         {
-//             name:"email",
-//             message:"What is the engineer's email?",
-//             type:"input",
-//         }
+        {
+            name:"email",
+            message:"What is the engineer's email?",
+            type:"input",
+        }
         
-//         ]);
+        ]);
         
-// }
+}
 
 
 
