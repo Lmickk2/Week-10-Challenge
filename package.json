@@ -1,0 +1,23 @@
+{
+  "name": "week-10-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lmickk2/Week-10-Challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lmickk2/Week-10-Challenge/issues"
+  },
+  "homepage": "https://github.com/Lmickk2/Week-10-Challenge#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  }
+}

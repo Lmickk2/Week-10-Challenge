@@ -1,4 +1,5 @@
 const Employee = require("./members/employee")
+const Template = require("./template")
 
 
 const generateHTML=(response) => {
@@ -14,6 +15,14 @@ const generateHTML=(response) => {
     <link rel="stylesheet" href="./styles.css">
   <body>
     <h1>Manager</h1>
+    <div>
+    <ol>
+        <li>${response.name}</li>
+        <li>ID: ${response.ID}</li>
+        <li>Email: ${response.email}</li>
+    </ol>
+
+    <h1>Engineer</h1>
     <div>
     <ol>
         <li>${response.name}</li>
