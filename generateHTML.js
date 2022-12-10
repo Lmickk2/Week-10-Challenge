@@ -21,8 +21,18 @@ const generateHTML=(response) => {
         <li>ID: ${response.ID}</li>
         <li>Email: ${response.email}</li>
     </ol>
+    </div>
 
     <h1>Engineer</h1>
+    <div>
+    <ol>
+        <li>${response.name}</li>
+        <li>ID: ${response.ID}</li>
+        <li>Email: ${response.email}</li>
+    </ol>
+    </div>
+
+    <h1>Intern</h1>
     <div>
     <ol>
         <li>${response.name}</li>
@@ -37,6 +47,5 @@ const generateHTML=(response) => {
   }
   
   
-  // TODO: Create a function to generate markdown for README *
   module.exports=generateHTML
   

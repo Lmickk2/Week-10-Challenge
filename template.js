@@ -2,9 +2,7 @@
 const fs= require("fs");
 const generateHTML= require("./generateHTML");
 const inquirer=require("inquirer");
-// Create questions
-// const createManager = () => {
-//     return 
+
     
     inquirer.prompt ([
 {
@@ -117,14 +115,11 @@ const newEngineer = () => {
 
 
 
-// TODO: Create a function to initialize app
 function init() {
 
 
 
 }
 
-
-// Function call to initialize app
 init();
 
