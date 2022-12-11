@@ -1,7 +1,9 @@
-
 const fs= require("fs");
-const generateHTML= require("./generateHTML");
 const inquirer=require("inquirer");
+const Manager = require("./members/manager");
+const Engineer = require("./members/engineer")
+const Intern = require("./members/intern");
+const generateHTML= require("./generateHTML");
 
     
     inquirer.prompt ([
@@ -25,17 +27,20 @@ const inquirer=require("inquirer");
 
 ])
 
-.then(response=> {
-    console.log(response)
-    const result=generateHTML(response)
-    fs.writeFile("index.html",result,error=>{
-        if(error) {
-            console.log(error);
-        } else {
-            console.log("HTML created!")
+.then(
+    function ({name,id,email,role}) {
+        switch(member) {
+            case "Intern":
+                newIntern(name,id,email);
         }
-    })
-})
+    }
+)
+break;
+
+switch(member){
+    case "Engineer":    
+    newEngineer(name,id,email);
+}
 
 
 const addMember = () => {
@@ -44,73 +49,89 @@ const addMember = () => {
         {
             name: "add",
             message: "Would you like to add a team member?",
-            choices: ["Add Manager", "Add Intern", "Add Engineer", "I'm done creating my team."],
+            choices: ["Add Intern", "Add Engineer", "I'm done creating my team."],
             type: "list"
         }
-    ])
-
-    .then(choice => {
-        switch (choice.menu) {
-            case "Add Intern":
-                newIntern();
-                break;
-            case "Add Engineer":
-                newEngineer();
-                break;
-            case "I'm done creating my team.":
-                createTeam();
-
-
-        }
-    });
+    ])    
 }
 
-const newIntern = () => {
-    return inquirer.prompt ([
-        {
-            name:"name",
-            message:`"What is the intern's name?"`,
-            type:"input"
-        },    
-        
-        {
-            name:"ID",
-            message:"What is the intern's ID?",
-            type:"input"
-        },
-        
-        {
-            name:"email",
-            message:"What is the intern's email?",
-            type:"input",
+if(choice === "Add Intern") {
+    return newIntern;
+}
+else if(choice === "Add Engineer") {
+    return newEngineer;
+}
+else {
+    fs.writeFile("index.html",result,error=>{
+        if(error) {
+            console.log(error);
+        } else {
+            console.log("HTML created!")
         }
-        
-        ]);
+    })
+    return "Team complied!"
 }
 
-const newEngineer = () => {
-    return inquirer.prompt ([
-        {
-            name:"name",
-            message:`"What is the engineer's name?"`,
-            type:"input"
-        },    
+// .then(response=> {
+//     console.log(response)
+//     const result=generateHTML(response)
+//     fs.writeFile("index.html",result,error=>{
+//         if(error) {
+//             console.log(error);
+//         } else {
+//             console.log("HTML created!")
+//         }
+//     })
+// })
+
+// const newIntern = () => {
+//     return inquirer.prompt ([
+//         {
+//             name:"name",
+//             message:`"What is the intern's name?"`,
+//             type:"input"
+//         },    
         
-        {
-            name:"ID",
-            message:"What is the engineer's ID?",
-            type:"input"
-        },
+//         {
+//             name:"ID",
+//             message:"What is the intern's ID?",
+//             type:"input"
+//         },
         
-        {
-            name:"email",
-            message:"What is the engineer's email?",
-            type:"input",
-        }
+//         {
+//             name:"email",
+//             message:"What is the intern's email?",
+//             type:"input",
+//         }
         
-        ]);
+//         ]);
+// }
+
+// const newEngineer = () => {
+//     return inquirer.prompt ([
+//         {
+//             name:"name",
+//             message:`"What is the engineer's name?"`,
+//             type:"input"
+//         },    
         
-}
+//         {
+//             name:"ID",
+//             message:"What is the engineer's ID?",
+//             type:"input"
+//         },
+        
+//         {
+//             name:"email",
+//             message:"What is the engineer's email?",
+//             type:"input",
+//         }
+        
+//         ]);
+        
+// }
+
+
 
 
 

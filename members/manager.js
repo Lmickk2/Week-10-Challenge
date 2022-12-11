@@ -1,11 +1,9 @@
 const Employee = require("./employee");
 
 class Manager extends Employee {
-    constructor(name,id,email) {
-        name = `${response.name}`
-        id = `${response.id}`
-        email = `${response.email}`
+    constructor(name, id, email) {
+        super(name, id, email)
     }
-
-    
 }
+
+module.exports = Manager
